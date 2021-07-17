@@ -1,0 +1,12 @@
+.section:not(:last-child) {
+	margin-bottom: 24px;
+}
+.authorEmail {
+	color: var(--black-light);
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.author {
+	margin: 4px 0;
+}

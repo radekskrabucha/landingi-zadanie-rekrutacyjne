@@ -4,11 +4,11 @@ import Footer from "../Footer/Footer";
 import layoutStyles from "./Layout.module.css";
 
 function Layout({ children }) {
-	const { container } = layoutStyles;
+	const { container, main } = layoutStyles;
 	return (
 		<div className={container}>
 			<Header />
-			{children}
+			<main className={main}>{children}</main>
 			<Footer />
 		</div>
 	);

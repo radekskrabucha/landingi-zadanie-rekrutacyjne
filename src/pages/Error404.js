@@ -1,10 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Error404() {
 	return (
-		<div>
-			<h1>Hello from 404 error page!</h1>
-		</div>
+		<>
+			<h1 className="title">
+				Oppss...
+				<br />
+				Looks like you're being lost
+			</h1>
+			<Link className="btn" to="/">
+				Take me back home
+			</Link>
+		</>
 	);
 }
 
