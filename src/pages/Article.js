@@ -1,41 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import CommentSection from "../components/Comments/CommentSection";
+import AddFavourite from "../components/AddFavourite/AddFavourite";
 
 function Article() {
 	const { id } = useParams();
-	const [post, setPost] = useState([]);
-	const [comments, setComments] = useState([]);
-	const [author, setAuthor] = useState({});
+	const posts = useSelector((state) => state.articles.articles);
+	const authors = useSelector((state) => state.authors.users);
+	const allComments = useSelector((state) => state.comments.comments);
 
-	useEffect(async () => {
-		const response = await fetch(
-			`https://jsonplaceholder.typicode.com/posts/${id}`
+	const post = posts && posts.find((post) => post.id == id);
+	const author =
+		authors && post && authors.find((author) => author.id === post.userId);
+	const comments =
+		allComments &&
+		post &&
+		allComments.filter((comments) => comments.postId === post.id);
+
+	if (!post) {
+		return (
+			<>
+				<h1 className="title">No such article...</h1>
+				<Link className="btn" to="/articles">
+					Go to articles
+				</Link>
+			</>
 		);
-		const data = await response.json();
-		console.log(data);
-		setPost(data);
-	}, []);
-	useEffect(async () => {
-		const response = await fetch(
-			`https://jsonplaceholder.typicode.com/posts/${id}/comments`
-		);
-		const data = await response.json();
-		setComments(data);
-	}, []);
-	useEffect(async () => {
-		const response = await fetch("https://jsonplaceholder.typicode.com/users");
-		const data = await response.json();
-		const author = data.find((author) => author.id === 1);
-		console.log(author);
-		setAuthor(author);
-	}, []);
+	}
+
 	return (
 		<>
-			<h3>Post by: {author.name}</h3>
-			<h1 className="title">{post.title}</h1>
-			<p className="article">{post.body}</p>
-			<CommentSection comments={comments} />
+			<AddFavourite canClick id={post.id} favourite={post.favourite} />
+			<h3>Written by: {author && author.name}</h3>
+			<h1 className="title">{post && post.title}</h1>
+			<p className="article">{post && post.body}</p>
+			{comments && <CommentSection comments={comments} id={id} />}
 		</>
 	);
 }

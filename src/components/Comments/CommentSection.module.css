@@ -1,0 +1,25 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 80px;
+}
+.inputContainer {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+}
+.label {
+	width: 140px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.textarea,
+.input {
+	font-family: "Montserrat", sans-serif;
+	padding: 8px;
+}
+.textarea {
+	resize: none;
+	width: auto;
+}

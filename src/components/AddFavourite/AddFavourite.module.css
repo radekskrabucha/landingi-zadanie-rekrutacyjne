@@ -1,0 +1,6 @@
+.icon {
+	cursor: pointer;
+}
+.icon:active {
+	transform: scale(0.9);
+}

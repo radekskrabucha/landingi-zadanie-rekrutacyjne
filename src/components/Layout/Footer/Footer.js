@@ -9,13 +9,19 @@ function Footer() {
 			<a
 				className={link}
 				href="https://github.com/radek1313/landingi-zadanie-rekrutacyjne"
+				target="_blank"
+				rel="noreferrer"
 			>
 				<p>Code here👈</p>
 			</a>
 			<div className={contact}>
 				<ul className={contactList}>
 					<li className={contactItem}>
-						<a href="https://github.com/radek1313/">
+						<a
+							href="https://github.com/radek1313/"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<svg
 								stroke="currentColor"
 								fill="currentColor"
@@ -30,7 +36,11 @@ function Footer() {
 						</a>
 					</li>
 					<li className={contactItem}>
-						<a href="https://www.linkedin.com/in/radoslaw-skrabucha/">
+						<a
+							href="https://www.linkedin.com/in/radoslaw-skrabucha/"
+							target="_blank"
+							rel="noreferrer"
+						>
 							<svg
 								stroke="currentColor"
 								fill="currentColor"

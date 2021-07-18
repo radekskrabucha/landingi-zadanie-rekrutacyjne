@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import articleCardStyles from "./ArticleCard.module.css";
+import AddFavourite from "../AddFavourite/AddFavourite";
 
-function ArticleCard({ id, title }) {
+function ArticleCard({ id, title, favourite }) {
 	const { article, articleTitle, link, readMore } = articleCardStyles;
 	return (
 		<Link className={link} to={`/articles/${id}`}>
 			<article className={article}>
-				<h2 className={articleTitle}>{title}</h2>
+				<h2 className={articleTitle}>
+					<AddFavourite id={id} favourite={favourite} />
+					{title}
+				</h2>
 				<p className={readMore}>
 					read article
 					<svg
