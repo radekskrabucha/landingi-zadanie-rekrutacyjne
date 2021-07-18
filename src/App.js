@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Articles from "./pages/Articles";
 import Article from "./pages/Article";
@@ -18,7 +18,7 @@ import {
 } from "./redux/actions";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com/";
-function App() {
+const App = () => {
 	const loading = useSelector((state) => state.loading);
 	const dispatch = useDispatch();
 
@@ -46,7 +46,7 @@ function App() {
 	}
 
 	return (
-		<Router basename={process.env.PUBLIC_URL}>
+		<Router>
 			<ScrollToTop />
 			<Layout>
 				<Switch>
@@ -66,6 +66,6 @@ function App() {
 			</Layout>
 		</Router>
 	);
-}
+};
 
 export default App;

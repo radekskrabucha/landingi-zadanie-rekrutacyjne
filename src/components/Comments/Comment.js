@@ -1,7 +1,7 @@
 import React from "react";
 import commenstStyles from "./Comment.module.css";
 
-function Comments({ body, email, name }) {
+const Comments = ({ body, email, name }) => {
 	const { section, authorEmail, author, comment } = commenstStyles;
 	return (
 		<article className={section}>
@@ -10,6 +10,6 @@ function Comments({ body, email, name }) {
 			<p className={comment}>{body}</p>
 		</article>
 	);
-}
+};
 
 export default Comments;

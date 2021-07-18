@@ -2,7 +2,7 @@ import React from "react";
 import loadingStyles from "./Loading.module.css";
 import loading from "../../assets/loading.svg";
 
-function Loading() {
+const Loading = () => {
 	const { container, logo } = loadingStyles;
 	return (
 		<div className={container}>
@@ -11,6 +11,6 @@ function Loading() {
 			<h1 className={logo}>notSoRandomBlog</h1>
 		</div>
 	);
-}
+};
 
 export default Loading;

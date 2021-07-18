@@ -5,7 +5,7 @@ import { addComment } from "../../redux/actions";
 
 import commentSectionStyles from "./CommentSection.module.css";
 
-function CommentSection({ comments, id }) {
+const CommentSection = ({ comments, id }) => {
 	const { form, inputContainer, label, input, textarea } = commentSectionStyles;
 	const [comment, setComment] = useState({ name: "", email: "", comment: "" });
 	const dispatch = useDispatch();
@@ -90,6 +90,6 @@ function CommentSection({ comments, id }) {
 			</form>
 		</section>
 	);
-}
+};
 
 export default CommentSection;

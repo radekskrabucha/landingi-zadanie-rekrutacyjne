@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import articleCardStyles from "./ArticleCard.module.css";
 import AddFavourite from "../AddFavourite/AddFavourite";
 
-function ArticleCard({ id, title, favourite }) {
+const ArticleCard = ({ id, title, favourite }) => {
 	const { article, articleTitle, link, readMore } = articleCardStyles;
 	return (
 		<Link className={link} to={`/articles/${id}`}>
@@ -32,6 +32,6 @@ function ArticleCard({ id, title, favourite }) {
 			</article>
 		</Link>
 	);
-}
+};
 
 export default ArticleCard;

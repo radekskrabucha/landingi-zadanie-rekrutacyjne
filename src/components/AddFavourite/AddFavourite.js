@@ -4,7 +4,7 @@ import favouriteStyles from "./AddFavourite.module.css";
 
 import { addToFavourite } from "../../redux/actions";
 
-const AddFavourite = ({ id, favourite, canClick }) => {
+const AddFavourite = ({ id, favourite }) => {
 	const dispatch = useDispatch();
 	const { icon } = favouriteStyles;
 	return (

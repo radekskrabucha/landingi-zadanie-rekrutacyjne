@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ArticleCard from "../components/ArticleCard/ArticleCard";
 
-function Articles() {
+const Articles = () => {
 	const posts = useSelector((state) => state.articles.articles);
 
 	return (
@@ -18,6 +18,6 @@ function Articles() {
 			</section>
 		</>
 	);
-}
+};
 
 export default Articles;

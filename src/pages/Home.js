@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ArticleCard from "../components/ArticleCard/ArticleCard";
 
-function Home() {
+const Home = () => {
 	const posts = useSelector((state) => state.articles.articles);
 	return (
 		<>
@@ -25,6 +25,6 @@ function Home() {
 			</Link>
 		</>
 	);
-}
+};
 
 export default Home;

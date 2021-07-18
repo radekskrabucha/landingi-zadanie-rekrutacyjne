@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import CommentSection from "../components/Comments/CommentSection";
 import AddFavourite from "../components/AddFavourite/AddFavourite";
 
-function Article() {
+const Article = () => {
 	const { id } = useParams();
 	const posts = useSelector((state) => state.articles.articles);
 	const authors = useSelector((state) => state.authors.users);
@@ -39,6 +39,6 @@ function Article() {
 			{comments && <CommentSection comments={comments} id={id} />}
 		</>
 	);
-}
+};
 
 export default Article;
