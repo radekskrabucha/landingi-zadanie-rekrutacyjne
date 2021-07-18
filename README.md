@@ -1,4 +1,4 @@
-[Live Demo](http://https://radek1313.github.io/landingi-zadanie-rekrutacyjne/#/) :point_left:
+[Live Demo](https://radek1313.github.io/landingi-zadanie-rekrutacyjne/#/) :point_left:
 
 # Landingi - zadanie rekrutacyjne
 
@@ -12,7 +12,7 @@ Przykładowy blog
 
 ## API:
 
-[JSON placeholder API](http://https://jsonplaceholder.typicode.com/ "JSON placeholder API")
+[JSON placeholder API](https://jsonplaceholder.typicode.com/ "JSON placeholder API")
 
 ## Działanie
 
