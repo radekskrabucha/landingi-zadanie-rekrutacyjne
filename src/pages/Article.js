@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import CommentSection from "../components/Comments/CommentSection";
+import CommentSection from "../components/Comments/CommentsSection/CommentSection";
 import AddFavourite from "../components/AddFavourite/AddFavourite";
 
 const Article = () => {
