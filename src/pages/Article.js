@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import CommentSection from "../components/Comments/CommentsSection/CommentSection";
 import AddFavourite from "../components/AddFavourite/AddFavourite";
 
+import { addToFavourite } from "../redux/actions";
+
 const Article = () => {
 	const { id } = useParams();
 	const posts = useSelector((state) => state.articles.articles);
@@ -32,7 +34,12 @@ const Article = () => {
 
 	return (
 		<>
-			<AddFavourite canClick id={post.id} favourite={post.favourite} />
+			<AddFavourite
+				canClick
+				id={post.id}
+				favourite={post.favourite}
+				action={addToFavourite}
+			/>
 			<h3>Written by: {author && author.name}</h3>
 			<h1 className="title">{post && post.title}</h1>
 			<p className="article">{post && post.body}</p>

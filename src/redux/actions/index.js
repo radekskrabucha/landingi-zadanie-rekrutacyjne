@@ -51,3 +51,10 @@ export const addToFavourite = (id) => {
 		payload: id,
 	};
 };
+
+export const addToFavouriteComment = (id) => {
+	return {
+		type: "ADD_FAVOURITE_COMMENT",
+		payload: id,
+	};
+};

@@ -4,13 +4,13 @@ import favouriteStyles from "./AddFavourite.module.css";
 
 import { addToFavourite } from "../../redux/actions";
 
-const AddFavourite = ({ id, favourite }) => {
+const AddFavourite = ({ id, favourite, action }) => {
 	const dispatch = useDispatch();
 	const { icon } = favouriteStyles;
 	return (
 		<svg
 			style={favourite && { color: `rgb(251, 255, 34)` }}
-			onClick={() => dispatch(addToFavourite(id))}
+			onClick={() => dispatch(action(id))}
 			className={icon}
 			stroke="currentColor"
 			fill="currentColor"
