@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import Comment from "../Comment/Comment";
+import { useLocation } from "react-router";
 import { useDispatch } from "react-redux";
 import { addComment } from "../../../redux/actions";
+
+import Comment from "../Comment/Comment";
 
 import commentSectionStyles from "./CommentSection.module.css";
 
 const CommentSection = ({ comments, id }) => {
+	const { pathname } = useLocation();
 	const { form, inputContainer, label, input, textarea } = commentSectionStyles;
 	const [comment, setComment] = useState({ name: "", email: "", comment: "" });
 	const dispatch = useDispatch();
@@ -40,7 +43,7 @@ const CommentSection = ({ comments, id }) => {
 			<h2 className="subtitle">Not so random comments</h2>
 			{comments &&
 				comments.map((comment) => <Comment {...comment} key={comment.id} />)}
-			<form className={form} onSubmit={(e) => postComment(e)}>
+			<form action={pathname} className={form} onSubmit={(e) => postComment(e)}>
 				<div className={inputContainer}>
 					<label className={label} htmlFor="name">
 						Name
